@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const Post = require('../models/post')
-const postController = require('../controllers/post')
+const Post = require('../models/posts')
+const postController = require('../controllers/posts')
 
 router.post('/', async (req,res) => {
     try {
@@ -39,7 +39,7 @@ router.patch('/:id', async(req,res) => {
     try {
         const updatedPost = await Post.findByIdAndUpdate(req.params.id, req.body, {new: true})
         if (!updatedPost) {
-            return res.status(404).json({eror: 'Post not found'})
+            return res.status(404).json({error: 'Post not found'})
         }
         res.json(updatedPost)
     } catch (error) {
@@ -53,7 +53,7 @@ router.delete('/:id', async (req,res) => {
         if (!deletedPost) {
             return res.status(404).json({error: 'Post not found'})
         }
-        res.json({message: 'Post deleted succesfully'})
+        res.json({message: 'Post deleted successfully'})
     } catch (error) {
         res.status(500).json({error: 'Internal Server Error'})
     }
