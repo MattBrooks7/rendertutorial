@@ -24,7 +24,7 @@ const getUserById = async(req,res) => {
 }
 
 const createUser = async (req,res) => {
-    const {firstName, lastName, email} = req.body
+    const {firstName, lastName, email, password} = req.body
     try {
         const user = new User ({firstName, lastName, email, password})
         await user.save()
