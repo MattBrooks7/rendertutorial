@@ -26,7 +26,7 @@ const getUserById = async(req,res) => {
 const createUser = async (req,res) => {
     const {firstName, lastName, email} = req.body
     try {
-        const user = new User ({firstName, lastName, email})
+        const user = new User ({firstName, lastName, email, password})
         await user.save()
         res.status(201).json(user)
     } catch (error) {
@@ -36,7 +36,7 @@ const createUser = async (req,res) => {
 
 const updateUser = async (req,res) => {
     const {id} = req.params
-    const {firstName, lastName, email} = req.body
+    const {firstName, lastName, email, password} = req.body
     try {
         const user = await User.findByIdAndUpdate(
             id,
