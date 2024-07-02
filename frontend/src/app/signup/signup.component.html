@@ -1,11 +1,29 @@
-<mat-card class="card-container">
-  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-    <mat-form-field>
-      <input matInput type="text" formControlName="email" placeholder="Email">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput type="password" formControlName="password" placeholder="Password">
-    </mat-form-field>
-    <button mat-raised-button color="primary" type="submit">Submit</button>
-  </form>
-</mat-card>
+<div class="card-container">
+
+  <mat-card>
+
+    <mat-card-header>Sign Up</mat-card-header>
+
+    <mat-card-content>
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+
+        <mat-form-field>
+          <input matInput type="text" formControlName="email" placeholder="Email">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="password" formControlName="password" placeholder="Password">
+        </mat-form-field>
+        <div class="button-container">
+          <button mat-raised-button color="primary" type="submit">Submit</button>
+        </div>
+      </form>
+    </mat-card-content>
+
+    <mat-card-footer>
+      <p>If you already have an account <a href="">Sign In</a></p>
+    </mat-card-footer>
+
+  </mat-card>
+
+</div>
