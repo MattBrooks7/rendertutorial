@@ -6,6 +6,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { RouterModule } from '@angular/router';
+import { BackendService } from '../services/backend/backend.service';
 
 @Component({
   selector: 'app-signup',
@@ -18,6 +20,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    RouterModule,
   ],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css',
@@ -25,19 +28,27 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 export class SignupComponent {
   signupForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private backendService: BackendService) {}
 
   ngOnInit(): void {
     this.signupForm = this.fb.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', Validators.required],
     });
   }
 
   onSubmit() {
-    console.log(this.signupForm.value);
+    if (this.signupForm.valid) {
+      this.backendService.signUp(this.signupForm.value).subscribe(
+        response => {
+          console.log('Success!', response);
+        },
+        error => {
+          console.error('Error!', error)
+        }
+      )
+    } else {
+      console.log('Form is not valid');
+    }
   }
 }

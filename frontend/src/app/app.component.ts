@@ -3,6 +3,8 @@ import { RouterOutlet } from '@angular/router';
 import { SignupComponent } from './signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from "./header/header.component";
+import { HttpClientModule } from '@angular/common/http';
+
 
 @Component({
     selector: 'app-root',
@@ -13,7 +15,8 @@ import { HeaderComponent } from "./header/header.component";
         RouterOutlet,
         SignupComponent,
         ReactiveFormsModule,
-        HeaderComponent
+        HeaderComponent,
+        HttpClientModule,
     ]
 })
 export class AppComponent {
