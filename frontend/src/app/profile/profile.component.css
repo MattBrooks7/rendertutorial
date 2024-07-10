@@ -1,0 +1,79 @@
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;  /* Center horizontally */
+  align-items: flex-start;  /* Align content to the top */
+  height: 100vh;            /* Full viewport height */
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* Center horizontally */
+  max-width: 800px;         /* Optional: limit the width of the content */
+  padding: 16px;
+  background: #fff;         /* Optional: background color */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: box shadow for better visibility */
+  border-radius: 8px;       /* Optional: rounded corners */
+}
+
+.profile-header {
+  margin-bottom: 16px;
+}
+
+.profile-summary {
+  display: flex;
+  align-items: center;
+}
+
+.profile-picture {
+  width: 50px;  /* Adjust the size as needed */
+  height: 50px; /* Adjust the size as needed */
+  border-radius: 50%;
+  margin-right: 16px; /* Adjust margin as needed */
+}
+
+.profile-summary h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.profile-summary p {
+  margin: 8px 0 0;
+}
+
+.post-input {
+  width: 100%;
+  background-color: #f2f3f5;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.post-input textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.post-input button {
+  background-color: #1877f2;  /* Facebook blue */
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.post-input button:hover {
+  background-color: #1468d1;  /* Darker shade on hover */
+}
