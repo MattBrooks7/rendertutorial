@@ -2,7 +2,7 @@
   <div class="profile-content">
     <div class="profile-header">
       <div class="profile-summary">
-        <img src="assets/profile-picture.jpg" alt="Profile Picture" class="profile-picture">
+        <img src="" alt="Profile Picture" class="profile-picture">
         <div>
           <h2>{{ userProfile.name }}</h2>
           <p>{{ userProfile.bio }}</p>
@@ -13,12 +13,11 @@
     <div class="post-input">
       <form>
         <textarea name="postContent" id="postContent" rows="3" placeholder="What's new?" [(ngModel)]="newPostContent"></textarea>
-        <button type="button" (click)="postNewContent()">Post</button>
+        <button mat-raised-button color="primary" type="button" (click)="postNewContent()">Post</button>
       </form>
     </div>
 
     <div class="profile-posts">
-      <h3>Posts</h3>
       <div *ngFor="let post of userProfile.posts" class="post">
         <h4>{{ post.title }}</h4>
         <p>{{ post.content }}</p>

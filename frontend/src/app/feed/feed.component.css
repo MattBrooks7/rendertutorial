@@ -1,3 +1,8 @@
+.container {
+  display: flex;
+  height: 100vh;
+}
+
 .sidebar {
   width: 250px;
   background-color: #f4f4f4;
@@ -9,11 +14,17 @@
   display: flex;
   align-items: center;
   margin-bottom: 16px;
+  text-decoration: none; /* Remove underline for links */
+  color: inherit; /* Inherit color for text */
+}
+
+.profile-summary:hover {
+  background-color: #f0f0f0; /* Optional: Add hover effect */
 }
 
 .profile-picture {
-  width: 50px;  /* Adjust the size as needed */
-  height: 50px; /* Adjust the size as needed */
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   margin-right: 8px;
 }
@@ -37,4 +48,92 @@
 
 .profile-links a:hover {
   background-color: #ddd;
+}
+
+.main-content {
+  flex: 2;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.profile-posts .post {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.profile-posts .post .post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.profile-posts .post .post-profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.profile-posts .post h4 {
+  margin: 0;
+}
+
+.profile-posts .post h5 {
+  margin: 10px 0;
+}
+
+.post-input {
+  width: 100%;
+  background-color: #f2f3f5;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.post-input textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.friends-list {
+  width: 250px;
+  background-color: #f4f4f4;
+  padding: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.friends-list h3 {
+  margin-top: 0;
+}
+
+.friends-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.friends-list li {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+.friends-list li:hover {
+  background-color: #ddd;
+}
+
+.friend-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
 }

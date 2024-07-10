@@ -14,6 +14,18 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
+    },
+    profilePic: {
+
+    },
+    // profile: {
+    //     type: 
+    // },
+    posts: {
+        type: String,
+    },
+    games: {
+        type: String,
     }
 })
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-profile',
@@ -9,6 +10,7 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     ProfileComponent,
+    MatButtonModule,
   ],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
